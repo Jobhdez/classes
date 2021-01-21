@@ -60,10 +60,13 @@ class Vector(Number):
     def mul(self, other):
         """
         Vector Vector -> Scalar or Vector Scalar -> Vector
+
         computes the DOT-PRODUCT of the two given Vectors if other is of type VECTOR;
         otherwise, if other is of type INT, it multiplies Vector by a scalar.
+
         given: Vector([-6, 8]) * Vector([5, 12])
         expect: 66 
+
         given: Vector([2,3,4,5]) * 3
         expect: [6,9,12,15]
         """
@@ -103,8 +106,11 @@ class M(Number):
     def sub(self, other):
         """
         M M -> M
+
         returns the DIFFERENCE of the given two matrices.
+
         given: M([[4,5,6], [5,6,7]]) - M([[2,3,4], [2,3,4]])
+
         expect: [[2,2,2], [3,3,3]]
         """
         if isinstance(other, M):
