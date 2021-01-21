@@ -1,3 +1,7 @@
+### lalg.py
+###
+### Author: Job Hernandez
+
 from math import sqrt
 from operator import (
     add,
