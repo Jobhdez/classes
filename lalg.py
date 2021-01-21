@@ -24,8 +24,11 @@ class Vector(Number):
     def add(self, other):
         """ 
         Vector Vector -> Vector
+
         given two Vectors 'add' adds them together.
+
         given: Vector([2,3,5]) + Vector([4,5,6])
+
         expect: Vector([6,8,11])
         """
 
@@ -39,8 +42,11 @@ class Vector(Number):
     def sub(self, other):
         """
         Vector Vector -> Vector
+
         given two Vectors 'sub' substracts them.
+
         given: Vector([2,3,5]) Vector([4,6,7])
+
         expect: Vector([-2,-3,-2])
         """
 
@@ -79,8 +85,11 @@ class M(Number):
     def add(self, other):
         """
         M M -> M
+
         returns the SUM of the two given matrices.
+
         given: M([[2,3,5], [5,6,7]]) + M([[3,4,5], [5,6,7]])
+
         expect: [[5,7,10], [10,12,14]]
         """
         if isinstance(other, M):
@@ -109,11 +118,16 @@ class M(Number):
     def mul(self, other):
         """
         M M -> M or M Scalar -> M
+
         returns the product of two matrices if the type of other is M; otherwise 
         if  the type of other is INT then it returns the matrix multplied by a scalar.
+
         given: M([[1,2,3], [4,5,6]]) * M([[7,8], [9,10], [11,12]])
+
         expect: [[58,64], [139, 154]]
+
         given: M([[2,3,4], [3,4,5]) * 4
+
         expect: [[8,12,16], [12,16,20]]
         """
 
@@ -137,8 +151,11 @@ class Vec(Vector):
     def magnitude(self):
         """
         Vec -> Scalar
+
         given a Vec 'magnitude' returns the magnitude.
+
         given: Vec([6,8])
+
         expect: 10
         """
 
@@ -148,10 +165,15 @@ class Vec(Vector):
 
         """
         Vector -> Bool 
+
         check if the Vector is a UNIT-VECTOR.
+
         given: Vec([6,8])
+
         expect: False
+
         given: Vec([1,0,0])
+
         expect: True 
         """
 
