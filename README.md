@@ -2,6 +2,6 @@
 basic vector and matrix classes
 
 ## purpose
-implemented tremendously basic linear algebra using object to learn object oriented programming.
+implemented tremendously basic linear algebra to learn object oriented programming.
 
 -- Job
