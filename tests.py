@@ -42,7 +42,7 @@ class test_vectors(unittest2.TestCase):
 class test_matrix(unittest2.TestCase):
 
     def test_addition(self):
-        """Test if addtion of matrices works."""
+        """Test if addition of matrices works."""
         m = Matrix([[2,3,5], [5,6,7]])
         m2 = Matrix([[3,4,5], [5,6,7]])
         self.assertEqual(m + m2, [[5,7,10], [10,12,14]])
