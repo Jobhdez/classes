@@ -16,7 +16,7 @@ class Poly:
         return "Polynomial" + str(tuple(self.coefficients))
 
     def degree(self):
-        return len(list(coefficients))
+        return len(list(self.coefficients))
 
 class Addition(Polynomial):
 
