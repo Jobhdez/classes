@@ -15,6 +15,9 @@ class Poly:
     def __repr__(self):
         return "Polynomial" + str(tuple(self.coefficients))
 
+    def degree(self):
+        return len(list(coefficients))
+
 class Addition(Polynomial):
 
     def compute(self, other):
