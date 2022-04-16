@@ -3,12 +3,20 @@ from abc import ABC, abstractmethod
 
 class Polynomial(ABC):
 
+    """
+    Abstract class from which the leafs and the composite expression inherits
+    from.
+    """
+
     @abstractmethod
     def compute(self):
         pass
 
 
 class Poly:
+    """
+    A polynomial POLY abstraction.
+    """
     def __init__(self, *coefficients):
         self.coefficients = coefficients
 
@@ -16,22 +24,29 @@ class Poly:
         return "Polynomial" + str(tuple(self.coefficients))
 
     def degree(self):
-        return len(list(self.coefficients))
+        return len(list(self.coefficients)) - 1
 
 class Addition(Polynomial):
+    """
+    Main operation is COMPUTE: it adds two polynomials; the leaf of the tree
+    representing the operation.
+    """
 
     def compute(self, other):
         result_poly = [coeff + coeff2 for coeff, coeff2 in zip(list(self.coefficients), list(other.coefficients))]
         return Poly(*result_poly)
 
 class Subtraction(Polynomial):
-    def __init__(self, poly, poly2):
-        self.poly = poly
-        self.poly2 = poly2
-
-    def compute(self):
-        result_poly = [coeff - coeff2 for coeff, coeff2 in zip(list(self.poly.coefficients), list(self.poly2.coefficients))]
-        return Poly(*result_poly)
+     """
+    Main operation is COMPUTE: it subtracts two polynomials; the leaf of the 
+    representing the operation.
+    """
+     def __init__(self, poly, poly2):
+         self.poly = poly
+         self.poly2 = poly2
+     def compute(self):
+         result_poly = [coeff - coeff2 for coeff, coeff2 in zip(list(self.poly.coefficients), list(self.poly2.coefficients))]
+         return Poly(*result_poly)
 
 class CompositeAddition(Polynomial):
 
@@ -47,6 +62,7 @@ class CompositeAddition(Polynomial):
 
 
 class CompositeSubtraction(Polynomial):
+    
     def __init__(self, *polynomials):
         self.polynomials = list(polynomials)
 
@@ -58,6 +74,32 @@ class CompositeSubtraction(Polynomial):
         result = [s - t - z for s, t, z in zip(*coefficients)]
 
         return Poly(*result)
-    
-            
-                 
+
+class Integer:
+
+    def __init__(self, integer):
+        self.integer = integer
+
+    def __repr__(self):
+        return "Integer" + "(" + str(self.integer) + ")"
+
+
+def solve_poly(poly, x):
+    """
+    given a polynomial and a value for x, solve the polynomial.
+   
+    @param: Poly
+    @param: a variable x
+
+    @returns: solution of polynomial given the value of x.
+    """
+    degree = poly.degree()
+    solution = 0
+    coefficients = list(poly.coefficients)
+    for i in range(len(coefficients)):
+        solution += (x ** degree) * coefficients[i]
+        degree -= 1
+        
+    return Integer(solution)
+                   
+        
