@@ -84,7 +84,7 @@ class Integer:
         return "Integer" + "(" + str(self.integer) + ")"
 
 
-def solve_poly(poly, x):
+def eval_poly(poly, x):
     """
     given a polynomial and a value for x, solve the polynomial.
    
