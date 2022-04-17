@@ -26,6 +26,7 @@ class Poly:
     def degree(self):
         return len(list(self.coefficients)) - 1
 
+
 class Addition(Polynomial):
     """
     Main operation is COMPUTE: it adds two polynomials; the leaf of the tree
@@ -83,6 +84,30 @@ class Integer:
 
     def __repr__(self):
         return "Integer" + "(" + str(self.integer) + ")"
+
+class Deriv(Polynomial):
+    
+    def __init__(self, poly):
+        if not isinstance(poly, Poly):
+            raise ValueError("{} is not of type Poly.".format(poly))
+        else:
+            self.poly = poly
+
+    def compute(self):
+        """
+        Given a polynomial it computes the derivative.
+        
+        @param poly: a polynomial
+        @returns: a polynomial, the derivative
+        """
+        coeffs = list()
+        exponent = self.poly.degree()
+        poly_coeffs = list(self.poly.coefficients)
+        for i in range(len(poly_coeffs) - 1):
+            coeffs.append(poly_coeffs[i] * exponent)
+            exponent -= 1
+
+        return Poly(*coeffs)
 
 
 def eval_poly(poly, x):
