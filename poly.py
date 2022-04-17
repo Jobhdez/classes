@@ -44,6 +44,7 @@ class Subtraction(Polynomial):
      def __init__(self, poly, poly2):
          self.poly = poly
          self.poly2 = poly2
+         
      def compute(self):
          result_poly = [coeff - coeff2 for coeff, coeff2 in zip(list(self.poly.coefficients), list(self.poly2.coefficients))]
          return Poly(*result_poly)
