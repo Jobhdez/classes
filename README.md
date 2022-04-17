@@ -16,6 +16,8 @@ Polynomial(3, 2, 1)
 Polynomial(6, 4, 2)
 >>> composite = CompositeAddition(poly, poly, poly)
 >>> composite.compute()
+
+
 >>> sub = Subtraction(poly, poly)
 >>> sub
 <__main__.Subtraction object at 0x105178a60>
@@ -31,6 +33,15 @@ Polynomial(7, 8, 9)
 >>> sub_composite = CompositeSubtraction(poly, poly, poly2)
 >>> sub_composite.compute()
 Polynomial(-7, -8, -9)
+
+>>> poly = Poly(5,4,3,2,1)
+>>> eval_poly(poly, 3)
+Integer(547)
+
+>>> poly = Poly(4,3,2,1)
+>>> deriv = Deriv(poly)
+>>> deriv.compute()
+Polynomial(12, 6, 2)
 ```
 
 -- Job
