@@ -117,7 +117,7 @@ def eval_poly(poly, x):
     @param: Poly
     @param: a variable x
 
-    @returns: solution of polynomial given the value of x.
+    @returns: evaluation of polynomial given the value of x.
     """
     degree = poly.degree()
     solution = 0
