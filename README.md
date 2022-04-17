@@ -1,6 +1,18 @@
 # classes
 a small computer algebra system; so far, it has minimal functionality for vector and matrices and polynomials.
 
+# how to install system
+
+1. clone repo: `git clone https://github.com/Jobhdez/classes.git`
+2. run tests: `pytest -q tests.py`
+3. load files: `exec(open(<file>).read())`
+
+## dependencies
+1. `pip3 install pytest`
+2. `brew install git` for mac
+3. `sudo apt install git` for Ubuntu
+
+
 ## examples
 ### Linear Algebra
 for the linear algebra system look at the tests for examples.
