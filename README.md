@@ -1,5 +1,5 @@
 # classes
-a small computer algebra system; so far, it has minimal functionality for vector and matrices and polynomials.
+a small repo to experiment with simple computer algebra. a place where I kind of test out ideas.
 
 # how to install system
 
